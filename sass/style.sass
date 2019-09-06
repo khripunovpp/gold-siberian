@@ -1,0 +1,510 @@
+@import "bourbon"
+@import "mixins"
+
+$color: #f4c409
+$font: Cambria, Georgia, serif
+
+html
+	box-sizing: border-box
+
+*,
+*::after,
+*::before
+	box-sizing: inherit
+	outline: none
+
+@include placeholder()
+  color: #767676
+
+body
+	margin: 0	
+	overflow-x: hidden
+	font-family: $font
+	line-height: 1.4
+	font-size: 14px
+	text-size-adjust: 100%
+	-webkit-tap-highlight-color: transparent
+
+img
+	max-width: 100%	
+	border: none	
+	outline: none	
+
+a
+	border: none	
+	outline: none	
+
+ul
+	list-style-type: none	
+	margin: 0	
+	padding: 0
+
+button,
+input,
+textarea,
+select
+	font-family: $font
+
+%container
+	width: 100%
+	max-width: 1200px	
+	padding: 0 15px
+	margin: 0 auto
+
+%grid
+	display: table
+	width: 100%
+	table-layout: fixed
+
+%part
+	display: table-cell
+	vertical-align: top
+
+.w-page
+	overflow: hidden
+
+.container
+	@extend %container
+
+%container-small
+	width: 100%
+	max-width: 950px	
+	padding: 0 15px
+	margin: 0 auto
+
+.hero
+	background-image: url(../img/bg.jpg)
+	background-position: 50% 100%
+	background-size: cover
+	padding: 15px 0 120px
+	position: relative
+	&::after,
+	&::before
+		content: ''
+		position: absolute
+		bottom: 0
+		width: 1500px
+		height: 200px
+	&::before
+		left: 50%
+		margin-left: -1500px
+		background-image: linear-gradient(7.5deg, #ece7d4 50%, transparent 50%)
+	&::after
+		right: 50%
+		margin-right: -1500px
+		background-image: linear-gradient(-7.5deg, #ece7d4 50%, transparent 50%)
+	&__top
+		margin-bottom: 85px
+		display: -webkit-flex
+		display: -moz-flex
+		display: -ms-flex
+		display: -o-flex
+		display: flex
+		justify-content: space-between
+		align-content: center
+	&__nav
+		display: -webkit-flex
+		display: -moz-flex
+		display: -ms-flex
+		display: -o-flex
+		display: flex
+		ul
+			display: -webkit-flex
+			display: -moz-flex
+			display: -ms-flex
+			display: -o-flex
+			display: flex
+			justify-content: center
+			align-items: center
+		li
+			margin-left: 30px
+		a
+			text-decoration: none
+			color: #fff
+			font-size: 16px
+			&:hover
+				text-decoration: underline
+	&__title
+		font-size: 100px
+		line-height: 1.2
+		margin: 0
+		color: #fff
+		text-transform: uppercase
+	&__subtitle
+		display: block
+		font-size: 60px
+		color: #ece7d4
+		text-transform: initial
+		margin: 0
+		line-height: 1
+		font-weight: 400
+	&__text
+		font-size: 36px
+		color: #bea06f
+		margin: 5px 0 35px
+		line-height: 1.1
+		font-style: italic
+	&__form
+		display: -webkit-flex
+		display: -moz-flex
+		display: -ms-flex
+		display: -o-flex
+		display: flex
+		border-radius: 100px
+		overflow: hidden
+		background-color: #fff
+		width: 580px
+		padding-left: 20px
+	&__submit
+		font-size: 30px
+		line-height: 1
+		background-color: #c0a473
+		background-image: linear-gradient(to right, #bfa170, #ece5d4)
+		border: none
+		padding: 7px 35px 11px
+		border-radius: 100px
+		margin-left: auto
+		cursor: pointer
+		&:hover
+			background-image: linear-gradient(to right, #bfa170 60%, #ece5d4)
+	&__field
+		max-width: 100%
+		border: none
+		display: block
+		flex: 1 1 auto
+		color: #000
+		font-size: 16px
+	&__response
+		text-align: center
+		color: #fff
+		max-width: 280px
+		margin-top: 10px
+	&__guarantees
+		display: -webkit-flex
+		display: -moz-flex
+		display: -ms-flex
+		display: -o-flex
+		display: flex
+		margin-top: 25px
+		&-item
+			max-width: 280px
+			margin-right: 65px
+			&-caption
+				font-size: 36px
+				margin: 0
+				font-style: italic
+				color: #bfa271
+			&-text
+				font-size: 16px
+				color: #fff
+
+.section
+	padding: 50px 0
+	h2
+		font-size: 48px
+		margin: 0 0 30px
+		text-align: center
+		line-height: 1.2
+
+.investments
+	background-color: #ece7d4
+	&__title
+		color: #bea06f
+	&__table
+		margin-bottom: 30px
+		border-collapse: collapse
+		text-align: center
+		table-layout: fixed
+		width: 100%
+		td
+			font-size: 18px
+			padding: 15px
+			border: 1px solid #ece7d4
+		tr
+			&:first-child
+				font-weight: 700
+			&:nth-child(odd)
+				td
+					background-color: #d5c3a1
+			&:nth-child(even)
+				td
+					background-color: #f6f3ea
+	&__disclamer
+		margin: 0
+		font-size: 14px
+		text-align: center
+
+.about
+	&__title
+		color: #bea06f
+	&__box
+		padding-left: 200px
+		@extend %container-small
+		position: relative
+		font-size: 0
+		&::before
+			content: ''
+			position: absolute
+			left: 0
+			top: 0
+			height: 100%
+			width: 165px
+			background-image: url(../img/decor.jpg)
+			background-size: cover
+		iframe
+			width: 100%
+			height: 420px
+
+.now
+	background-color: #000
+	background-image: url(../img/now-bg.png)
+	background-position: 60% 50%
+	background-repeat: no-repeat
+	padding-bottom: 95px
+	background-size: auto 100%
+	&__title
+		color: #ece7d4
+	&__box
+		width: 55%
+		position: relative
+		&::after
+			content: ''
+			position: absolute
+			left: 100%
+			top: -20px
+			width: 547px
+			height: 318px
+			background-image: url(../img/now-graph.png)
+	&__why
+		font-style: italic
+		font-weight: 700
+		font-size: 21px
+		color: #bea06f
+		margin: 0 0 15px
+	&__text
+		font-size: 14px
+		color: #fff
+		margin: 0
+
+.history
+	&__title
+		color: #bea06f
+	&__box
+		padding-right: 200px
+		@extend %container-small
+		position: relative
+		&::before
+			content: ''
+			position: absolute
+			right: 0
+			top: 0
+			height: 100%
+			width: 165px
+			background-image: url(../img/decor.jpg)
+			background-size: cover
+	&__text
+		font-size: 14px
+		text-indent: 25px
+		margin: 0
+	&__where
+		margin-top: 30px
+		&-caption
+			font-size: 30px
+			color: #bea06f
+			margin: 0
+			line-height: 1
+		&-subcaption
+			font-size: 14px
+			margin: 0 0 35px
+		&-list
+			display: -webkit-flex
+			display: -moz-flex
+			display: -ms-flex
+			display: -o-flex
+			display: flex
+			justify-content: space-between
+		&-item
+			width: 23%
+			text-align: center
+			&-text
+				font-size: 14px
+				margin: 20px 0 0
+			&-count
+				font-size: 18px
+				color: #bea06f
+				display: block
+
+.assets
+	background-color: #ece7d4
+	&__title
+		color: #bea06f
+	&__box
+		display: flex
+	&__left,
+	&__right
+		width: 50%
+		position: relative
+	&__left
+		margin-right: 15px
+	&__right
+		margin-left: 15px
+		p
+			margin: 0
+			text-indent: 25px
+			font-size: 14px
+	&__pic
+		position: absolute
+		&--1
+			bottom: 0
+			left: 0
+			max-width: 80%
+		&--2
+			top: 0
+			right: 0
+			max-width: 65%
+
+
+
+.metrics
+	&__title
+		color: #bea06f
+	&__box
+		@extend %container-small
+		position: relative
+		&::before
+			content: ''
+			position: absolute
+			right: 50%
+			margin-right: -83px
+			top: 0
+			height: 100%
+			width: 165px
+			background-image: url(../img/decor.jpg)
+			background-size: cover
+			opacity: .2
+	&__row
+		display: -webkit-flex
+		display: -moz-flex
+		display: -ms-flex
+		display: -o-flex
+		display: flex
+		&+&
+			margin-top: 35px
+	&__item
+		width: 50%
+		position: relative
+		&-caption
+			font-size: 16px
+			margin: 0 0 13px
+			color: #bea06f
+			font-style: italic
+			line-height: 1.2
+			font-weight: 700
+			text-transform: uppercase
+		&-text
+			font-size: 14px
+		&-pic
+			position: absolute
+			top: 50%
+			transform: translateY(-50%)
+		&:first-child
+			padding-right: 210px
+			text-align: right
+			.metrics__item-pic
+				right: 110px
+		&:last-child
+			padding-left: 210px
+			.metrics__item-pic
+				left: 110px
+
+
+.reviews
+	background-color: #15140f
+	&__title
+		color: #ece7d4
+	&__list
+		max-width: 555px
+		margin: 0 auto
+		position: relative
+	&__item
+	&__video
+		width: 100%
+	&__name
+		margin: 30px 0 0
+		font-size: 16px
+		color: #fff
+		font-style: italic
+		text-align: center
+	&__role
+		font-size: 14px
+		font-style: normal
+		display: block
+	.slick-arrow
+		position: absolute
+		top: 150px
+		background-image: url(../img/reviews-arrow.png)
+		width: 263px
+		height: 25px
+		font-size: 0
+		padding: 0
+		line-height: 1
+		border: none
+		background-color: transparent
+		cursor: pointer
+		transition: all .2s
+	.slick-prev
+		left: -288px
+		&:hover
+			transform: translateX(-15px)
+	.slick-next
+		right: -288px
+		transform: scale(-1,1)
+		&:hover
+			transform: translateX(15px) scale(-1,1)
+
+.contacts
+	padding-bottom: 0
+	&__title
+		color: #bea06f
+	&__box
+		display: -webkit-flex
+		display: -moz-flex
+		display: -ms-flex
+		display: -o-flex
+		display: flex
+		min-height: 400px
+		background-color: #ece7d4
+	&__left,
+	&__right
+		width: 50%
+		position: relative
+	&__left
+		text-align: right
+		padding: 150px 30px
+		font-size: 24px
+	&__address
+		margin: 0
+	&__email,
+	&__cite,
+	&__phone
+		text-decoration: none
+		color: inherit
+		display: block
+		&:hover
+			text-decoration: underline
+	&__phone
+		font-weight: 700
+		font-size: 36px
+		color: #bea06f
+		margin: 50px 0
+	&__map
+		position: absolute
+		top: 0
+		left: 0
+		width: 100%
+		height: 100%
+
+
+
+//ALWAYS END
+@import "media"
